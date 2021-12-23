@@ -14,7 +14,7 @@ SoundNet is an open-source hardware and software system for localising the posit
 SoundNet has a relatively simple concept. Two recorders which can work out the geo-referenced bearing to a received click are deployed on the headline of gill net separated by 20-50m. If two devices detect the same click, then the point at which the bearings cross is the position of the animal (see Figure 1). 
 
 <p align="center">
-  <img width="700" height="450" src = "resources/soundnetdiagram.png">
+  <img width="700" height="430" src = "resources/soundnetdiagram.png">
 </p>
 
 _Figure 1. Diagram of the localising array (not to scale). Two recording devices were attached to the floatline of a gill net via a 3 m strop line. The recording devices were kept slightly positively buoyant using a small float, allowing them to maintain position in the water column above the float line without deforming the net. Each device contained a tetrahedral 4 element hydrophone cluster which enabled the calculation of 3D localisation vector to the source of a received sound. As a given deployment involved two devices, there was effectively an 8-channel hydrophone array mounted on the net. If both devices detected the same click, the point at which the two vectors intersected indicated the instantaneous 3D location of the animal. Animal movement patterns could then be inferred by interpolating these 3D locations._
