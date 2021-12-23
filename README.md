@@ -31,7 +31,7 @@ However, whilst the concept is straightforward the implementation requires sever
 The resulting data from a successfully deployed system and analysis provides 3D tracks of animals which can be cross referenced with acoustic behaviour, for example tell-tale foraging buzzes. Figure 2 shows an example of 3D tracks of harbour porpoises around the net. 
 
 <p align="center">
-  <img width="800" height="600" src = "resources/exampledata.png">
+  <img width="800" height="480" src = "resources/exampledata.png">
 </p
   
 _Figure 2. Example of a 3D dive track of a single harbour porpoise where the porpoise approaches but does not come within 5 m of the gill net. A) A 3D view of the track, including bathymetry and the position of the gill net (black). Note that the gill net was assumed to be in line with the recording devices and  2m above the seabed.   B) A top-down view, and C) the depth profile along the gill net. . In this example, the porpoise dives close to the net several times producing foraging buzzes (or possibly calls) throughout the water column and towards the end of the encounter comes very close (< 5 m) to the net._
