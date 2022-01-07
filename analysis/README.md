@@ -1,4 +1,4 @@
-# Acoustic Analysis
+# Acoustic Analysis (under construction)
 
 SoundNet data consist of two or more (if more devices are used) sets of 4 channel wave files and sensor package files. 
 
@@ -10,7 +10,44 @@ The acoustic data is analysed in PAMGuard to detect and classify possible porpoi
   <img width="800" height="400" src = "../resources/pamguard_bearings.png">
 </p>
 
-Opening a PAMGuard binary file is easy. For example a folder of binary files can be opened via
+_An example of clicks detected on one SoundNet device. PAMGuard automatically matched clicks on different hydrophones (on the same device, not between devices) and calculated the time delays, horizontlan and vertical bearings. A manual analyst can use the slowly chnages bearings to mark out click trains in the bearing time display. If more than one animal is present there will usually be concurrent seperated bearing tracks._ 
+
+Opening a PAMGuard binary file is straightforward. For example a folder of binary files can be opened via
+
+```Matlab
+%the folder
+folder = 'rootpath\mypamguardfolder'; 
+
+% load clicks
+clicks = loadPamguardBinaryFolder(folder, 'Click_Detector_Clicks_*.pgdf', 5);
+```
+This will return an array of clicks, with each element a structure containing metadata for each clicks such as time, waveform, time delays, bearings (if multiple hydrophones). The data can be exploted in MATLAB's variable explorer or accessd via code. For example to extract the time delay values from the first clicks in the array use 
+
+```Matlab
+timedelays = clicks(1).delays
+````
+The time delays are measured between all hydrophones - so for four hydrophones there are six measurements - i.e. the time delays between channels 0 - 1,  0 - 2,  0 - 3,  1 - 2,  1 - 3 and 2 - 3. 
+
+Waveforms from a click detection can be plotted using 
+
+```Matlab
+%waveform of the first click 
+wave = clicks(1).wave
+
+tiledlayout(1,clicks(1).nChan)
+for i = 1:nChan
+nexttile
+plot(wave); 
+ylabel('Amplitude (linear)')
+xlabel('Time (bins)')
+end
+````
+
+<p align="center">
+  <img width="300" height="400" src = "../resources/clickplotexample.png">
+</p>
+
+_An example of waveforms from a single click detection imported from PAMGuard and plotted using MATLAB. Note that PAMGuard autmatically matched click between hydrophones within the same SoundNet device and so one click detection contains 4 waveforms. PAMGaurd also calculates the time delays between the waveforms and localised the horizontal and verticla bearing for wach click_
 
 
 ## Sensor files
