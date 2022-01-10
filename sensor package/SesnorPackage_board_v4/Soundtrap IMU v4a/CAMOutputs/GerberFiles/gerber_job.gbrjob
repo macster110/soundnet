@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2020-01-14T13:06:28Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.5.2"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.57,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "Soundtrap IMU board v4 RXTX switch"
+        },
+        "Owner": "Michael Oswald <mo55@st-andrews.ac.uk>",
+        "Size": {
+            "X": 24.308,
+            "Y": 43.424
+        }
+    }
+}
