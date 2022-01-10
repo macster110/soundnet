@@ -4,6 +4,8 @@ SoundNet data consist of two or more (if more devices are used) sets of 4 channe
 
 ## Acoustic data
 
+### Analysis in PAMGuard
+
 The acoustic data is analysed in PAMGuard to detect and classify possible porpoise clicks. A manual analyst then verifies detections using PAMGuard's manual annotation tools to mark out click trains and remove spurious detections (e.g echoes). Detected clicks along with metadata sich as bearing and time delays are saved to bespoke PAMGaurd files (PAMGaurd binary files) which can be imported into MATLAB using the [MATLAB to PAMGuard library](https://github.com/PAMGuard/PAMGuardMatlab) (note: you must download this library and add it to your MATLAB path). 
 
 <p align="center">
@@ -11,6 +13,8 @@ The acoustic data is analysed in PAMGuard to detect and classify possible porpoi
 </p>
 
 _An example of clicks detected on one SoundNet device. PAMGuard automatically matched clicks on different hydrophones (on the same device, not between devices) and calculated the time delays, horizontlan and vertical bearings. A manual analyst can use the slowly chnages bearings to mark out click trains in the bearing time display. If more than one animal is present there will usually be concurrent seperated bearing tracks._ 
+
+### PAMGuard MATLAB library
 
 Opening a PAMGuard binary file is straightforward. For example a folder of binary files can be opened via
 
@@ -36,10 +40,10 @@ wave = clicks(1).wave
 
 tiledlayout(1,clicks(1).nChan)
 for i = 1:nChan
-nexttile
-plot(wave); 
-ylabel('Amplitude (linear)')
-xlabel('Time (bins)')
+  nexttile
+  plot(wave); 
+  ylabel('Amplitude (linear)')
+  xlabel('Time (bins)')
 end
 ````
 
@@ -47,12 +51,15 @@ end
   <img width="300" height="400" src = "../resources/clickplotexample.png">
 </p>
 
-_An example of waveforms from a single click detection imported from PAMGuard and plotted using MATLAB. Note that PAMGuard autmatically matched click between hydrophones within the same SoundNet device and so one click detection contains 4 waveforms. PAMGaurd also calculates the time delays between the waveforms and localised the horizontal and verticla bearing for wach click_
+_An example of waveforms from a single click detection imported from PAMGuard and plotted using MATLAB. Note that PAMGuard autmatically matched click between hydrophones within the same SoundNet device and so one click detection contains 4 waveforms. PAMGuardrd also calculates the time delays between the waveforms and localised the horizontal and verticla bearing for wach click_
 
+Note that there is also a [comprehensive R library](https://github.com/TaikiSan21/PamBinaries) for PAMGuard which has like-for-like functions to the MATLAB library. 
+
+### Importing datasets
 
 ## Sensor files
 
-Sensor files from the sensor package attached to the SoundTrap are human readable .csv files saved to the SoundTrap's SD card. These can be opened using the MATLAB code in the sensor package folder. For example to open a folder of sensor files and plot the data use
+Sensor files from the sensor package attached to the SoundTrap are human readable .csv files which are saved to the SoundTrap's SD card. These can be opened using the MATLAB code in the sensor package folder. For example to open a folder of sensor files and plot the data use
 
 ```Matlab
 %folder where the csv files are located. 
@@ -73,7 +80,23 @@ The sensordata struct contains the output from the orientation, depth, temperatu
 
 _Example of sensor package data plotted in MATLAB._
 
+## Geo referencing hydrophones and/or localised bearings
+
+//TODO
+
 
 ## Localisation
 
 Localisation is performed 
+
+
+## Data management
+
+Data management will be different depending on the project and thus data management code is not provided here; the code provided and associated help should be considered a toolbox to construct an acoustic workflow for localisation, rather than a one-stop solution. 
+
+However, whilst each acoustic workflow will depend on the study site etc., they will all require some general stages as follows. 
+
+1) Extract sounds of interest
+3) Geo reference hydrophone positons using the sensor package
+4) Time align the SoundTraps and match clicks between different devices. 
+5) Pass time aligned data to the localisation algorithm. 
