@@ -1,4 +1,4 @@
-# SoundNet (repository under construction)
+# SoundNet
 
 ## Introduction
 
