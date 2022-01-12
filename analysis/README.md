@@ -57,7 +57,7 @@ Note that there is also a [comprehensive R library](https://github.com/TaikiSan2
 
 ### Importing datasets
 
-The matlab library has severla convenience functions for importing large datasets. For example,
+The matlab library has several convenience functions for importing large datasets. For example,
 
 ```Matlab
 % load clicks from a folder
@@ -121,11 +121,11 @@ _Results of the particle filter using the porpoise_example.m script. The orange 
 
 ## Data management
 
-Data management will be different depending on the project and thus data management code is not provided here; the code provided and associated help should be considered a toolbox to construct an acoustic workflow for localisation, rather than a one-stop solution. 
+Data management will vary depending on the project and thus data management code is not provided here; the code provided and associated help should be considered a toolbox to construct an acoustic workflow for localisation, rather than a one-stop solution. 
 
-However, whilst each acoustic workflow will depend on the study site etc., they will all require some general stages as follows. 
+However, whilst each acoustic workflow will depend on the study site, species of interest etc., they will all require some general stages as follows. 
 
-1) Extract sounds of interest
-3) Geo reference hydrophone positons using the sensor package
+1) Extract sounds of interest.
+3) Geo reference hydrophone positons using the sensor package data.
 4) Time align the SoundTraps and match clicks between different devices. 
-5) Pass time aligned and geo-referenced data to the localisation algorithm.
+5) Pass time aligned and geo-referenced data to the localisation algorithm to determine animal tracks. 
