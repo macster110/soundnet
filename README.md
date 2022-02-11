@@ -1,4 +1,7 @@
-# SoundNet
+  [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6045759.svg)](https://doi.org/10.5281/zenodo.6045759)
+
+
+# SoundNet                                            
 
 ## Introduction
 
