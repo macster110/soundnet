@@ -100,7 +100,13 @@ _Example of sensor package data plotted in MATLAB._
 
 ## Geo referencing hydrophones and/or localised bearings
 
-//TODO
+The sensor data is used to geo-reference clicks. The _sensordata_ folder imports .csv files and concatonates the sensor data into a single matlab structure. The functions in the _georef_ folder then combine imported click detections and the sensordata to provide geo-referenced bearings and/or hydrophone positions. aan example of how to use the functions is shown in georef/georef_example.m
+
+<p align="center">
+  <img width="500" height="300" src = "../resources/georefexample.png">
+</p>
+
+_A plot of raw and georeferenced bearings to detected porpoise clicks alongisde the heading data recorded on the sensor package._
 
 
 ## Localisation
