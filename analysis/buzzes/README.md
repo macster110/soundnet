@@ -230,7 +230,7 @@ l.FontSize=12;
 
 
 <p align="center">
-  <img width="700" height="430" src = "./resources/buzz_plot.png">
+  <img width="900" height="530" src = "../../resources/buzz_plot.png">
 </p>
 
 _Rapid sequences of clicks (either foraging approaches/buzzes or calls) plotted alongside the inter-click interval distributions for communication calls and foraging buzzes from DTAG data analysis  (Sørensen et al., 2018) before, during and after the bycatch occurs._
