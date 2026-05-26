@@ -229,4 +229,11 @@ l.FontSize=12;
 
 
 
+<p align="center">
+  <img width="700" height="430" src = "./resources/buzz_plot.png">
+</p>
+
+_Rapid sequences of clicks (either foraging approaches/buzzes or calls) plotted alongside the inter-click interval distributions for communication calls and foraging buzzes from DTAG data analysis  (Sørensen et al., 2018) before, during and after the bycatch occurs._
+
+Sørensen, P.M. et al. (2018) ‘Click communication in wild harbour porpoises (Phocoena phocoena)’, Scientific Reports, 8(1), p. 9702. Available at: https://doi.org/10.1038/s41598-018-28022-8.
 
